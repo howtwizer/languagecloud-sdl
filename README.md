@@ -1,5 +1,5 @@
 # languagecloud-sdl
-
+[![Gem Version](https://badge.fury.io/rb/languagecloud-sdl.svg)](https://badge.fury.io/rb/languagecloud-sdl)
 
 ## Installation
 
