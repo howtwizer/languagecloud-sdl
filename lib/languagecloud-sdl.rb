@@ -40,6 +40,9 @@ module LanguagecloudSdl
     #   ]
     # }
     # Translating array of strings
+    # Pass language to what oyu wnat to translate.
+    # Pass array of strings that need to be translated.
+
     def translations(to_lang, params = {})
       params = normalized_params(params)
       params[:from] = source_lang
