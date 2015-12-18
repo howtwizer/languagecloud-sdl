@@ -16,7 +16,7 @@ describe LanguagecloudSdl::API do
     }
   end
 
-  subject { LanguagecloudSdl::API.new(api_key: 'rdO2JoD3lGHV7ufdlRjCAw%3D%3D', source_lang: 'eng') }
+  subject { LanguagecloudSdl::API.new(api_key: 'xxxxxxxxxxxxxx', source_lang: 'eng') }
 
   describe 'initialize' do
     it 'is an error to leave out the key or secret' do
@@ -37,7 +37,7 @@ describe LanguagecloudSdl::API do
     it 'returns the result eventually' do
       stub_request(:post, "https://lc-api.sdl.com/translations").
           with(:body => "{\"texts\":[\"a\",\"b\"],\"from\":\"eng\",\"to\":\"fra\"}",
-               :headers => {'Authorization'=>'LC apiKey=rdO2JoD3lGHV7ufdlRjCAw%3D%3D', 'Content-Type'=>'application/json'}).
+               :headers => {'Authorization'=>'LC apiKey=xxxxxxxxxxxxxx', 'Content-Type'=>'application/json'}).
           to_return(:status => 200, :body => result.to_json, :headers => {})
 
       defer = nil
@@ -72,7 +72,7 @@ describe LanguagecloudSdl::API do
       }
       stub_request(:post, "https://lc-api.sdl.com/translations").
           with(:body => "{\"texts\":[\"a\",\"b\"],\"from\":\"eng\",\"to\":\"fra\"}",
-               :headers => {'Authorization'=>'LC apiKey=rdO2JoD3lGHV7ufdlRjCAw%3D%3D', 'Content-Type'=>'application/json'}).
+               :headers => {'Authorization'=>'LC apiKey=xxxxxxxxxxxxxx', 'Content-Type'=>'application/json'}).
           to_return(:status => 200, :body => result.to_json, :headers => {})
       res = subject.translations('fra', options)
       expect(res.code).to eq 200
